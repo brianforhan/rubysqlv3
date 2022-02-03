@@ -19,14 +19,14 @@ values = { name: "Apple Inc.", url: "https://www.apple.com", city: "Cupertino", 
 apple = Company.new(values)
 apple.save
 
-values = { name: "Amazon.com, Inc.", url: "https://www.amazon.com", city: "Seattle", state: "WA" }
+values = { name: "Amazon Inc.", url: "https://www.amazon.com", city: "Seattle", state: "WA" }
 amazon = Company.new(values)
 amazon.save
 
 apple = Company.where({ name: "Apple Inc." })[0]
 apple_id = apple.read_attribute(:id)
 
-amazon = Company.where({ name: "Amazon.com, Inc." })[0]
+amazon = Company.where({ name: "Amazon Inc." })[0]
 amazon_id = amazon.read_attribute(:id)
 
 values = { first_name: "Tim", last_name: "Cook", email: "tim@apple.com", phone_number: "777-777-7777", company_id: apple_id }
@@ -49,6 +49,16 @@ for contact in contacts
 end 
 
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
+
+contacts = Contact.all
+company = Company.where(id: contact.company_id)[0]
+for contact in contacts
+    puts "#{company.name}
+    #{contact.first_name} #{contact.last_name}
+    #{contact.email}
+    "
+end 
+
 
 # ---------------------------------
 # Apple Inc.
