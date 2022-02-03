@@ -59,7 +59,6 @@ for contact in contacts
     "
 end 
 
-
 # ---------------------------------
 # Apple Inc.
 # Tim Cook - tim@apple.com
