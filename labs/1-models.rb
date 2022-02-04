@@ -50,7 +50,7 @@ contact.save
 # Elon Musk - elon@tesla.com
 # Tim Cook - tim@apple.com
 
-puts "Contacts: #{Contact.all.count}"
+"Contacts: #{Contact.all.count}"
 contacts = Contact.all
 for contact in contacts
     puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
