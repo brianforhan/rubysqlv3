@@ -55,3 +55,11 @@ contacts = Contact.all
 for contact in contacts
     puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
 end 
+
+amazon_id = amazon_id
+contacts = Contact.where(company_id: amazon_id)
+
+puts "Contacts at Amazon: #{contacts.count}"
+for contact in contacts
+    puts "#{contact.first_name} #{contact.last_name}"
+end
